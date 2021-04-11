@@ -5,7 +5,7 @@
 *@modifier AsfandYar 10-4-2021
 *@modifier Abubaker 10-4-2021
  */
-package ca.sheridancollege.project;
+package ca.sheridancollege;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -75,6 +75,14 @@ public class GroupOfCards {
         playingCard card = cards.remove(0);
         size--;
         return card;
+    }
+
+    public ArrayList<playingCard> getCards() {
+        return cards;
+    }
+
+    public void setCards(ArrayList<playingCard> cards) {
+        this.cards = cards;
     }
 }
 

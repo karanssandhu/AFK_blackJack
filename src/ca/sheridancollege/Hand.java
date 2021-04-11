@@ -1,7 +1,7 @@
 //@author Karan 10-4-2021
 //@author AsfandYar 10-4-2021
 //@author Abubaker 10-4-2021
-package ca.sheridancollege.project;
+package ca.sheridancollege;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -70,5 +70,13 @@ public class Hand {
         }
         hands = hands + aHand[aHand.length - 1].toString();
         return hands;
+    }
+
+    public ArrayList<playingCard> getHand() {
+        return hand;
+    }
+
+    public void setHand(ArrayList<playingCard> hand) {
+        this.hand = hand;
     }
 }

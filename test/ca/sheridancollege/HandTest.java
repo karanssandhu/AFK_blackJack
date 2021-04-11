@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ca.sheridancollege.project;
+package ca.sheridancollege;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -68,8 +68,23 @@ public class HandTest {
         assertEquals(hand.getHandSize(), 2);
     }
 
+     /**
+     * Test of good getHandSize method, of class Hand.
+     */
+    @Test
+    public void GoodtestGetHandSize() {
+        System.out.println("Good case getHandSize()");
+        GroupOfCards deck = new GroupOfCards(52);
+        Hand hand = new Hand(deck);
+        User user = new User();
+        user.getNewHand(deck);
+        int expResult = 2;
+        int result = hand.getHandSize();
+        assertEquals(expResult, result);
+    }
+    
     /**
-     * Test of getHandSize method, of class Hand.
+    * Test of getHandSize method, of class Hand.
      */
     @Test
     public void BadtestGetHandSize() {
@@ -80,8 +95,9 @@ public class HandTest {
         user.getNewHand(deck);
         int expResult = 3;
         int result = hand.getHandSize();
-        assertTrue(expResult!=result);
+        assertNotEquals(expResult, result);
     }
+    
     @Test
     public void BoundarytestGetHandSize() {
         System.out.println("Boundary case getHandSize()");
@@ -105,7 +121,7 @@ public class HandTest {
         Hand instance = new Hand(deck);
         User user = new User();
         user.getNewHand(deck);
-        int expResult = 5;
+        int expResult = 7;
         int result = user.getHand(1).getHandValue();
         assertEquals(expResult, result);
     }
@@ -118,10 +134,11 @@ public class HandTest {
         user.getNewHand(deck);
         int expResult = 6;
         int result = user.getHand(1).getHandValue();
-        assertFalse(expResult==result);
+        assertNotEquals(expResult, result);
     }
     /**
-     * Test of getCard method, of class Hand.
+     * Test of getCard method, of class Hand. 
+     * //TODO - Ignore
      */
     @Test
     public void testGetCard() {

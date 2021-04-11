@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ca.sheridancollege.project;
+package ca.sheridancollege;
 
 import java.util.ArrayList;
 import org.junit.After;
@@ -49,32 +49,35 @@ public class GroupOfCardsTest {
         System.out.println("Good case shuffle()");
         GroupOfCards tempdeck = new GroupOfCards(52);
         tempdeck.shuffle();
+        ArrayList<playingCard> shuffledCards = tempdeck.getCards();
         GroupOfCards deck = new GroupOfCards(52);
+        ArrayList<playingCard> unshuffledCards = deck.getCards();
         boolean expResult = false;
-        boolean actResult = tempdeck.equals(deck);
-        assertEquals(expResult, actResult);
+        assertNotEquals(shuffledCards.get(1).toString(),unshuffledCards.get(1).toString());
     }
 
     @Test
     public void BadtestShuffle() {
         System.out.println("Bad case shuffle()");
         GroupOfCards tempdeck = new GroupOfCards(52);
-        tempdeck.shuffle();
+         ArrayList<playingCard> shuffledCards = tempdeck.getCards();
         GroupOfCards deck = new GroupOfCards(52);
+        ArrayList<playingCard> unshuffledCards = deck.getCards();
         boolean expResult = true;
-        boolean actResult = tempdeck.equals(tempdeck);
-        assertEquals(expResult, actResult);
+        boolean actResult = tempdeck.equals(deck);
+        assertEquals(shuffledCards.get(0).toString(), unshuffledCards.get(0).toString());
     }
 
     @Test
     public void BoundarytestShuffle() {
-        System.out.println("Boundary case shuffle()");
+        System.out.println("Good case shuffle()");
         GroupOfCards tempdeck = new GroupOfCards(52);
         tempdeck.shuffle();
+        ArrayList<playingCard> shuffledCards = tempdeck.getCards();
         GroupOfCards deck = new GroupOfCards(52);
+        ArrayList<playingCard> unshuffledCards = deck.getCards();
         boolean expResult = false;
-        boolean actResult = tempdeck.equals(deck);
-        assertEquals(expResult, actResult);
+        assertNotEquals(shuffledCards.get(1).toString(),unshuffledCards.get(1).toString());
     }
 
     /**
@@ -108,7 +111,7 @@ public class GroupOfCardsTest {
     }
 
     /**
-     * Test of setSize method, of class GroupOfCards.
+     * Test of setSize method, of class GroupOfCards. //TODO ignore
      */
     @Test
     public void GoodtestSetSize() {
@@ -144,40 +147,40 @@ public class GroupOfCardsTest {
     }
 
     /**
-     * Test of drawCard method, of class GroupOfCards.
+     * Test of Good drawCard method, of class GroupOfCards.
      */
     @Test
     public void GodtestDrawCard() {
-        System.out.println("Good case drawCard()");
+         System.out.println("Good case drawCard()");
         GroupOfCards deck = new GroupOfCards(52);
-        deck.shuffle();
-        int expResult = 50;
-        deck.drawCard();
-        deck.drawCard();
-        assertTrue(expResult == deck.getSize());
+        playingCard p = new playingCard(playingCard.Suit.HEARTS, playingCard.Value.ACE);
+        assertEquals(p.toString(), deck.drawCard().toString());
 
     }
 
+    /**
+     * Test of Bad drawCard method, of class GroupOfCards.
+     */
+    
     @Test
     public void BadtestDrawCard() {
-        System.out.println("Bad Case drawCard()");
+         System.out.println("Bad case drawCard()");
         GroupOfCards deck = new GroupOfCards(52);
         deck.shuffle();
-        int expResult = 51;
-        deck.drawCard();
-        deck.drawCard();
-        assertFalse(expResult == deck.getSize());
+        playingCard p = new playingCard(playingCard.Suit.HEARTS, playingCard.Value.TWO);
+        assertNotEquals(p.toString(), deck.drawCard().toString());
 
     }
-
+    /**
+     * Test of boundary drawCard method, of class GroupOfCards.
+     */
+    
     @Test
     public void BoundarytestDrawCard() {
         System.out.println("Boundary case drawCard()");
         GroupOfCards deck = new GroupOfCards(52);
-        deck.shuffle();
-        int expResult = 51;
-        deck.drawCard();
-        assertTrue(expResult == deck.getSize());
+        playingCard p = new playingCard(playingCard.Suit.HEARTS, playingCard.Value.ACE);
+        assertEquals(p.toString(), deck.drawCard().toString());
 
     }
 }

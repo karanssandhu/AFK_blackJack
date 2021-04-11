@@ -1,7 +1,7 @@
 //@author Karan 10-4-2021
 //@author AsfandYar 10-4-2021
 //@author Abubaker 10-4-2021
-package ca.sheridancollege.project;
+package ca.sheridancollege;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -39,7 +39,7 @@ public class BlackJack extends Game {
             output.askBet();
 
             user.setBet(input.getBet(user.getCash()));
-            user.setCash(user.getCash() - user.getBet());
+            user.setCash(user.getCash());
 
             output.showCash(user.getCash());
             output.showBet(user.getBet());
@@ -101,7 +101,7 @@ public class BlackJack extends Game {
                     }
                 }
                 if (!user.hasBusted()) {
-                    dealer.takeTurn(deck);
+                    System.out.println(dealer.takeTurn(deck));
                     output.showDealerHand(dealer);
                     if (dealer.hasBusted()) {
                         output.dealerBusted();
@@ -303,10 +303,10 @@ public class BlackJack extends Game {
 
     public class Input {
 
-        private BlackJack.Output outputter;
+        private Output outputter;
 
-        Input(BlackJack.Output outputs) {
-            outputs = outputter;
+        Input(Output outputs) {
+           outputter = outputs;
         }
 
         public String getName() {

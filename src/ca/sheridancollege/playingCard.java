@@ -1,13 +1,9 @@
 //@author Karan 10-4-2021
 //@author AsfandYar 10-4-2021
 //@author Abubaker 10-4-2021
-package ca.sheridancollege.project;
+package ca.sheridancollege;
 
 public class playingCard extends Card {
-
-    playingCard() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
     public enum Suit {
         HEARTS,
@@ -41,16 +37,25 @@ public class playingCard extends Card {
     }
 
     public int getSuit() {
+        if(this.suit==null){
+            return 0;
+        }
         return this.suit.ordinal();
     }
 
     public int getRank() {
+        if(this.value==null){
+            return 0;
+        }
         return value.ordinal();
     }
 
    public int getValue() {
         int rank = 0;
-        if (value.ordinal() == 0) {
+        if(this.value==null){
+            rank = 0;
+        }
+        else if (value.ordinal() == 0) {
             rank = 11;
         } else if (value.ordinal() >= 10) {
             rank = 10;

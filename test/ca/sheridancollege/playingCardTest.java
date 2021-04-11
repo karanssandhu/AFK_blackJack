@@ -1,9 +1,9 @@
-/*
+ /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ca.sheridancollege.project;
+package ca.sheridancollege;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -43,28 +43,23 @@ public class playingCardTest {
     @Test
     public void GoodtestGetSuit() {
         System.out.println("Good case testGetSuit()");
-        playingCard.Suit card = playingCard.Suit.HEARTS;
-
-        assertEquals(playingCard.Suit.valueOf("HEARTS"), card);
+        playingCard p = new playingCard(playingCard.Suit.HEARTS, playingCard.Value.TWO);
+        assertEquals(0, p.getSuit());
     }
 
     @Test
     public void BadtestGetSuit() {
         System.out.println("Bad case testGetSuit()");
-        playingCard.Suit card = playingCard.Suit.HEARTS;
-        boolean expResult = false;
-        boolean actualResult = playingCard.Suit.valueOf("SPADES").equals(card);
-        assertEquals(expResult, actualResult);
+        playingCard p = new playingCard(playingCard.Suit.CLUBS, playingCard.Value.TWO);
+        assertNotEquals(0, p.getSuit());
 
     }
 
     @Test
     public void BoundarytestGetSuit() {
         System.out.println("Boundary case testGetSuit()");
-        playingCard.Suit card = playingCard.Suit.HEARTS;
-        boolean expResult = true;
-        boolean actualResult = playingCard.Suit.valueOf("HEARTS").equals(card);
-        assertEquals(expResult, actualResult);
+        playingCard p = new playingCard(null,playingCard.Value.TWO);
+        assertEquals(0, p.getSuit());
 
     }
 
@@ -74,30 +69,24 @@ public class playingCardTest {
     @Test
     public void GoodtestGetRank() {
         System.out.println("Good case testGetRank()");
-        playingCard.Value card = playingCard.Value.ACE;
-        boolean expResult = true;
-        boolean actualResult = playingCard.Value.ACE.equals(card);
-        assertEquals(expResult, actualResult);
+        playingCard p = new playingCard(playingCard.Suit.HEARTS, playingCard.Value.ACE);
+        assertEquals(0, p.getRank());
 
     }
 
     @Test
     public void BadtestGetRank() {
         System.out.println("Bad case testGetRank()");
-        playingCard.Value card = playingCard.Value.ACE;
-        boolean expResult = false;
-        boolean actualResult = playingCard.Value.TEN.equals(card);
-        assertEquals(expResult, actualResult);
+        playingCard p = new playingCard(playingCard.Suit.HEARTS, playingCard.Value.ACE);
+        assertNotEquals(10, p.getRank());
 
     }
 
     @Test
     public void BoundarytestGetRank() {
         System.out.println("Boundary case testGetRank()");
-        playingCard.Value card = playingCard.Value.ACE;
-        boolean expResult = true;
-        boolean actualResult = playingCard.Value.ACE.equals(card);
-        assertEquals(expResult, actualResult);
+        playingCard p = new playingCard(playingCard.Suit.HEARTS,null);
+        assertEquals(0, p.getRank());
 
     }
 
@@ -106,27 +95,25 @@ public class playingCardTest {
      */
     @Test
     public void GoodtestGetValue() {
-        System.out.println("Good case testgetValue()");
-        playingCard.Value card = playingCard.Value.TWO;
-        assertEquals(playingCard.Value.valueOf("TWO"), card);
+        System.out.println("Good case testGetValue()");
+        playingCard p = new playingCard(playingCard.Suit.HEARTS, playingCard.Value.ACE);
+        assertEquals(11, p.getValue());
 
     }
 
     @Test
     public void BadtestGetValue() {
-        System.out.println("Good case testgetValue()");
-        playingCard.Value card = playingCard.Value.TWO;
-
-        assertFalse(playingCard.Value.valueOf("ACE") == card);
+        System.out.println("Bad case testGetValue()");
+        playingCard p = new playingCard(playingCard.Suit.HEARTS, playingCard.Value.ACE);
+        assertNotEquals(1, p.getValue());
 
     }
 
     @Test
     public void BoundarytestGetValue() {
-        System.out.println("Boundary case testgetValue()");
-        playingCard.Value card = playingCard.Value.TWO;
-
-        assertTrue(playingCard.Value.valueOf("TWO") == card);
+        System.out.println("Boundary case testGetValue()");
+        playingCard p = new playingCard(playingCard.Suit.HEARTS, null);
+        assertEquals(0, p.getValue());
 
     }
 

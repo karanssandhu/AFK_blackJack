@@ -5,7 +5,7 @@
 *@modifier AsfandYar 10-4-2021
 *@modifier Abubaker 10-4-2021
  */
-package ca.sheridancollege.project;
+package ca.sheridancollege;
 
 import java.util.ArrayList;
 

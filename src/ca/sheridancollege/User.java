@@ -1,7 +1,7 @@
 //@author Karan 10-4-2021
 //@author AsfandYar 10-4-2021
 //@author Abubaker 10-4-2021
-package ca.sheridancollege.project;
+package ca.sheridancollege;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -13,6 +13,8 @@ public class User extends Player {
     private String name;
 
     public User() {
+        this.bet = 0;
+        this.cash = 0;
     }
 
     public int getCash() {
@@ -28,7 +30,7 @@ public class User extends Player {
     }
 
     public void setCash(int money) {
-        cash = money;
+        cash = money - bet;
     }
 
     public void setBet(int money) {
