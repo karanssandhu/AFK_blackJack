@@ -38,11 +38,11 @@ public class GroupOfCardsTest {
     public void tearDown() {
     }
 
-    /**
-     * Test of showCards method, of class GroupOfCards.
-     */
+    
     /**
      * Test of shuffle method, of class GroupOfCards.
+     * Good test case
+     * to test the valid case functioning of shuffle method
      */
     @Test
     public void GoodtestShuffle() {
@@ -55,7 +55,12 @@ public class GroupOfCardsTest {
         boolean expResult = false;
         assertNotEquals(shuffledCards.get(1).toString(),unshuffledCards.get(1).toString());
     }
-
+    
+    /**
+     * Test of shuffle method, of class GroupOfCards.
+     * Good test case
+     * to test if the invalid case functioning of shuffle method
+     */
     @Test
     public void BadtestShuffle() {
         System.out.println("Bad case shuffle()");
@@ -67,10 +72,15 @@ public class GroupOfCardsTest {
         boolean actResult = tempdeck.equals(deck);
         assertEquals(shuffledCards.get(0).toString(), unshuffledCards.get(0).toString());
     }
-
+    
+    /**
+     * Test of shuffle method, of class GroupOfCards.
+     * Boundary test case
+     * to test the boundary valid functioning of shuffle method
+     */
     @Test
     public void BoundarytestShuffle() {
-        System.out.println("Good case shuffle()");
+        System.out.println("Boundary case shuffle()");
         GroupOfCards tempdeck = new GroupOfCards(52);
         tempdeck.shuffle();
         ArrayList<playingCard> shuffledCards = tempdeck.getCards();
@@ -82,6 +92,8 @@ public class GroupOfCardsTest {
 
     /**
      * Test of getSize method, of class GroupOfCards.
+     * Good test case
+     * to test the valid functioning of getSize method
      */
     @Test
     public void GoodtestGetSize() {
@@ -89,25 +101,37 @@ public class GroupOfCardsTest {
         GroupOfCards deck = new GroupOfCards(52);
         int size = 52;
         deck.setSize(52);
-        assertTrue(deck.getSize() == size);
+        assertEquals(size,deck.getSize());
     }
-
+    
+     /**
+     * Test of getSize method, of class GroupOfCards.
+     * Bad test case
+     * to test the boundary valid functioning of GetSize() method
+     */
     @Test
     public void BadtestGetSize() {
-        System.out.println("Boundary case getSize()");
+        System.out.println("Bad case getSize()");
         GroupOfCards deck = new GroupOfCards(52);
         int size = 51;
         deck.setSize(52);
-        assertFalse(deck.getSize() == size);
+        deck.getCards().clear();
+        assertNotEquals(51,deck.getSize());
     }
 
+    /**
+     * Test of getSize method, of class GroupOfCards.
+     * Boundary test case
+     * to test the boundary valid functioning of GetSize() method
+     */
     @Test
     public void BoundarytestGetSize() {
         System.out.println("Boundary case getSize()");
         GroupOfCards deck = new GroupOfCards(52);
         int size = 52;
         deck.setSize(52);
-        assertTrue(deck.getSize() == size);
+        deck.getCards().clear();
+        assertEquals(0,deck.getSize());
     }
 
     /**
@@ -116,12 +140,10 @@ public class GroupOfCardsTest {
     @Test
     public void GoodtestSetSize() {
         System.out.println("Good case setSize");
-
         int size = 52;
         GroupOfCards deck = new GroupOfCards(52);
         deck.setSize(size);
         assertTrue(deck.getSize() == size);
-
     }
 
     @Test
@@ -148,6 +170,8 @@ public class GroupOfCardsTest {
 
     /**
      * Test of Good drawCard method, of class GroupOfCards.
+     * Good test case
+     * to check the valid functioning of the drawCard method
      */
     @Test
     public void GodtestDrawCard() {
@@ -159,7 +183,9 @@ public class GroupOfCardsTest {
     }
 
     /**
-     * Test of Bad drawCard method, of class GroupOfCards.
+     * Test of drawCard method, of class GroupOfCards.
+     * bad test case
+     * to check the invalid functioning of the drawCard method
      */
     
     @Test
@@ -171,16 +197,19 @@ public class GroupOfCardsTest {
         assertNotEquals(p.toString(), deck.drawCard().toString());
 
     }
-    /**
-     * Test of boundary drawCard method, of class GroupOfCards.
+    
+   /**
+     * Test of drawCard method, of class GroupOfCards.
+     * Boundary test case
+     * to check the valid boundary functioning of the drawCard method
      */
     
     @Test
     public void BoundarytestDrawCard() {
         System.out.println("Boundary case drawCard()");
         GroupOfCards deck = new GroupOfCards(52);
-        playingCard p = new playingCard(playingCard.Suit.HEARTS, playingCard.Value.ACE);
-        assertEquals(p.toString(), deck.drawCard().toString());
+        deck.getCards().clear();
+        assertEquals(null, deck.drawCard());
 
     }
 }

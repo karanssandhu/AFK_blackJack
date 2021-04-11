@@ -39,6 +39,8 @@ public class HandTest {
 
     /**
      * Test of Hit method, of class Hand.
+     * Boundary test case
+     * to test the valid boundary functioning of the Hit method
      */
     @Test
     public void BoundarytestHit() {
@@ -49,6 +51,11 @@ public class HandTest {
         assertEquals(hand.getHandSize(), 3);
     }
 
+    /**
+     * Test of Hit method, of class Hand.
+     * Good test case
+     * to test if valid functioning of the Hit method
+     */
     @Test
     public void GoodtestHit() {
         System.out.println("Good case Hit()");
@@ -59,17 +66,23 @@ public class HandTest {
         assertEquals(hand.getHandSize(), 4);
     }
 
+    /**
+     * Test of Hit method, of class Hand.
+     * Bad test case
+     * to test the valid functioning of the Hit method
+     */
     @Test
     public void BadtestHit() {
         System.out.println("Bad case Hit()");
         GroupOfCards deck = new GroupOfCards(52);
         Hand hand = new Hand(deck);
-
         assertEquals(hand.getHandSize(), 2);
     }
 
-     /**
+    /**
      * Test of good getHandSize method, of class Hand.
+     * Good test case
+     * to test the valid functioning of the getHandSize method
      */
     @Test
     public void GoodtestGetHandSize() {
@@ -82,9 +95,11 @@ public class HandTest {
         int result = hand.getHandSize();
         assertEquals(expResult, result);
     }
-    
+
     /**
-    * Test of getHandSize method, of class Hand.
+     * Test of getHandSize method, of class Hand.
+     * Bad test case
+     * to test the invalid functioning of the getHandSize method
      */
     @Test
     public void BadtestGetHandSize() {
@@ -98,6 +113,11 @@ public class HandTest {
         assertNotEquals(expResult, result);
     }
     
+    /**
+     * Test of  getHandSize method, of class Hand.
+     * Boundary test case
+     * to test the boundary functioning of the getHandSize method
+     */
     @Test
     public void BoundarytestGetHandSize() {
         System.out.println("Boundary case getHandSize()");
@@ -107,12 +127,13 @@ public class HandTest {
         user.getNewHand(deck);
         int expResult = 2;
         int result = hand.getHandSize();
-        assertEquals(expResult,result);
+        assertEquals(expResult, result);
     }
-
 
     /**
      * Test of getHandValue method, of class Hand.
+     * Good  test case
+     * to test the valid functioning of the getHandValue method
      */
     @Test
     public void GoodtestGetHandValue() {
@@ -125,7 +146,13 @@ public class HandTest {
         int result = user.getHand(1).getHandValue();
         assertEquals(expResult, result);
     }
-@Test
+    
+    /**
+     * Test of getHandValue method, of class Hand.
+     * Bad  test case
+     * to test the invalid functioning of the getHandValue method
+     */
+    @Test
     public void BadtestGetHandValue() {
         System.out.println("Bad case getHandValue");
         GroupOfCards deck = new GroupOfCards(52);
@@ -136,6 +163,26 @@ public class HandTest {
         int result = user.getHand(1).getHandValue();
         assertNotEquals(expResult, result);
     }
+
+     /**
+     * Test of getHandValue method, of class Hand.
+     * Bad  test case
+     * to test the boundary functioning of the getHandValue method
+     */
+    @Test
+    public void BoundarytestGetHandValue() {
+        System.out.println("Boundary case getHandValue");
+        GroupOfCards deck = new GroupOfCards(52);
+        Hand instance = new Hand(deck);
+        User user = new User();
+        user.getNewHand(deck);
+        user.getHand(1).Hit(deck);
+        int expResult = 12;
+        int result = user.getHand(1).getHandValue();
+        assertEquals(expResult, result);
+    }
+    
+    
     /**
      * Test of getCard method, of class Hand. 
      * //TODO - Ignore
@@ -153,6 +200,4 @@ public class HandTest {
         assertEquals(expResult, result);
     }
 
-    
-    
 }

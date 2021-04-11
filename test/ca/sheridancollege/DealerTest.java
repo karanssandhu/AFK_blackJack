@@ -46,12 +46,19 @@ public class DealerTest {
 
     /**
      * Test of showFirstCard method, of class Dealer.
+     * Good test case
+     * to check all the valid cases for the showFirstCard()
      */
     @Test
     public void GoodtestShowFirstCard() {
         System.out.println("Good test case for showFirstCard()");
-        
-        dealer.getNewHand(deck);
+        GroupOfCards tempDeck = new GroupOfCards(52);
+        ArrayList<playingCard> playingCards = new ArrayList<>();
+        playingCards.add(new playingCard(playingCard.Suit.HEARTS, playingCard.Value.ACE));
+        playingCards.add(new playingCard(playingCard.Suit.HEARTS, playingCard.Value.ACE));
+        deck.getCards().clear();
+        deck.setCards(playingCards);
+        dealer.getNewHand(tempDeck);
         dealer.showFirstCard();
         playingCard card = new playingCard(playingCard.Suit.HEARTS, playingCard.Value.ACE);
         assertEquals(dealer.hand.get(0).getHand().get(0).toString(), card.toString());
@@ -59,6 +66,8 @@ public class DealerTest {
     
     /**
      * Test of showFirstCard method, of class Dealer.
+     * Bad test case
+     * to check all the invalid cases for the showFirstCard()
      */
     @Test
     public void BadtestShowFirstCard() {
@@ -69,41 +78,59 @@ public class DealerTest {
         playingCard card = new playingCard(playingCard.Suit.CLUBS, playingCard.Value.ACE);
         assertNotEquals(card.toString(),dealer.hand.get(0).getHand().get(0).toString());
     }
+    
+    /**
+     * Test of showFirstCard method, of class Dealer.
+     * Boundary test case
+     * to check all the boundary cases for the showFirstCard()
+     */
+    @Test
+    public void BoundarytestShowFirstCard() {
+        System.out.println("Good test case for showFirstCard()");
+        
+        dealer.getNewHand(deck);
+        dealer.showFirstCard();
+        playingCard card = new playingCard(playingCard.Suit.HEARTS, playingCard.Value.ACE);
+        assertEquals(dealer.hand.get(0).getHand().get(0).toString(), card.toString());
+    }
 
     /**
      * Test of wantsToHit method, of class Dealer.
+     * Good test case
+     * to check all the valid cases for the wantsToHit()
      */
     @Test
-    public void testWantsToHit() {
-        /*good*/
-        System.out.println("wantsToHit");
+    public void GoodtestWantsToHit() {
+        System.out.println("Good test case for wantsToHit");
         Dealer dealer = new Dealer();
         GroupOfCards deck = new GroupOfCards(52);
         dealer.getNewHand(deck);
         boolean result = dealer.wantsToHit();
         System.out.println(result);
         assertTrue(result);
-        /*bad*/
-        dealer.getHand(1).Hit(deck);
-        dealer.getHand(1).Hit(deck);
-        dealer.getHand(1).Hit(deck);
-        dealer.getHand(1).Hit(deck);
-        dealer.getHand(1).Hit(deck);
-
-        result = dealer.wantsToHit();
-        assertFalse(result);
     }
 
+     /**
+     * Test of wantsToHit method, of class Dealer.
+     * Boundary test case
+     * to check all the Boundary cases for the wantsToHit()
+     */
     @Test
     public void boundaryWantsToHitTest() {
+        System.out.println("Boundary test case for wantsToHit");
         Dealer dealer = new Dealer();
         boolean result = dealer.wantsToHit();
         assertFalse(result);
     }
-
+    
+    /**
+     * Test of wantsToHit method, of class Dealer.
+     * Boundary test case
+     * to check all the Boundary cases for the wantsToHit()
+     */
     @Test
     public void BadWantsToHitTest() {
-        System.out.println("wantsToHit");
+        System.out.println("Bad test case for wantsToHit");
         Dealer dealer = new Dealer();
         GroupOfCards deck = new GroupOfCards(52);
         dealer.getNewHand(deck);
@@ -118,13 +145,14 @@ public class DealerTest {
     
     }
 
-    
     /**
-     * Test of showHand method, of class Dealer.
+     * Test of showHand() method, of class Dealer.
+     * Good test case
+     * to check all the valid cases for the showHand()()
      */
     @Test
-    public void testGoodShowHand() {
-        System.out.println("showHand");
+    public void GoodtestShowHand() {
+        System.out.println("Good test for showHand");
         GroupOfCards tempDeck = new GroupOfCards(52);
         ArrayList<playingCard> playingCards = new ArrayList<>();
         playingCards.add(new playingCard(playingCard.Suit.HEARTS, playingCard.Value.ACE));
@@ -142,9 +170,14 @@ public class DealerTest {
         assertEquals(handList.toString(), dealer.hand.toString());
     }
 
+    /**
+     * Test of showHand() method, of class Dealer.
+     * Bad test case
+     * to check all the invalid cases for the showHand()()
+     */
     @Test
-    public void testBadShowHand() {
-        System.out.println("showHand");
+    public void BadtestShowHand() {
+        System.out.println("Bad test for showHand");
         dealer.getNewHand(deck);
         List<Hand> handList = new ArrayList<>();
         ArrayList<playingCard> playingCards = new ArrayList<>();
@@ -157,28 +190,51 @@ public class DealerTest {
         assertNotEquals(handList.toString(), dealer.hand.toString());
     }
 
+     /**
+     * Test of showHand() method, of class Dealer.
+     * Boundary test case
+     * to check all the boundary cases for the showHand()()
+     */
     @Test
-    public void testBoundaryShowHand() {
-        System.out.println("showHand");
+    public void BoundarytestShowHand() {
+         GroupOfCards tempDeck = new GroupOfCards(52);
+        ArrayList<playingCard> playingCards = new ArrayList<>();
+        playingCards.add(new playingCard(playingCard.Suit.HEARTS, playingCard.Value.ACE));
+        playingCards.add(new playingCard(playingCard.Suit.HEARTS, playingCard.Value.TWO));
+        tempDeck.getCards().clear();
+        tempDeck.setCards(playingCards);
+        dealer.getNewHand(tempDeck);
         List<Hand> handList = new ArrayList<>();
+        playingCards.add(new playingCard(playingCard.Suit.HEARTS, playingCard.Value.ACE));
+        playingCards.add(new playingCard(playingCard.Suit.HEARTS, playingCard.Value.TWO));
+        Hand hand = new Hand(deck);
+        hand.setHand(playingCards);
+        handList.add(hand);
         dealer.showHand();
         assertEquals(handList.toString(), dealer.hand.toString());
     }
 
     /**
      * Test of takeTurn method, of class Dealer.
+     * Good test case
+     * to check all the good cases for the takeTurn()
      */
     @Test
-    public void testGoodTakeTurn() {
-        System.out.println("takeTurn");
+    public void GoodtestTakeTurn() {
+        System.out.println("Good test for takeTurn");
         dealer.getNewHand(deck);
         String result = dealer.takeTurn(deck);
         assertEquals(result, "The dealer stands.");
     }
 
+    /**
+     * Test of takeTurn method, of class Dealer.
+     * Bad test case
+     * to check all the invalid cases for the takeTurn()
+     */
     @Test
-    public void testBadTakeTurn() {
-        System.out.println("takeTurn");
+    public void BadtestTakeTurn() {
+        System.out.println("Bad test for takeTurn");
         dealer.getNewHand(deck);
         dealer.getHand(1).Hit(deck);
         dealer.getHand(1).Hit(deck);
@@ -191,11 +247,17 @@ public class DealerTest {
         String result = dealer.takeTurn(deck);
         assertEquals(10, dealer.hand.get(0).getHandSize());
     }
-
+    /**
+     * Test of takeTurn method, of class Dealer.
+     * Boundary test case
+     * to check all the boundary cases for the takeTurn()
+     */
     @Test
-    public void testBoundaryTakeTurn() {
-        System.out.println("takeTurn");
-        String result = dealer.takeTurn(deck);
-        assertEquals("Please draw initial hand!", result);
+    public void BoundarytestTakeTurn() {
+        GroupOfCards tempDeck = new GroupOfCards(52);
+        Dealer dealer1 = new Dealer();
+        System.out.println("Boundary test for takeTurn");
+        String result = dealer1.takeTurn(tempDeck);
+        assertEquals("Please initialise hand!", result);
     }
 }

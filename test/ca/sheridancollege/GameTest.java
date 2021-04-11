@@ -40,6 +40,8 @@ public class GameTest {
 
     /**
      * Test of getGameName method, of class Game.
+     * Good test case
+     * to check all the valid inputs for getGameName()
      */
     @Test
     public void GoodtestGetGameName() {
@@ -50,7 +52,12 @@ public class GameTest {
         assertEquals(expResult, result);
 
     }
-
+    
+    /**
+     * Test of getGameName method, of class Game.
+     * Bad test case
+     * to check all the invalid inputs for getGameName()
+     */
     @Test
     public void BadtestGetGameName() {
         System.out.println("Bad case getGameName()");
@@ -59,6 +66,12 @@ public class GameTest {
         String result = instance.getGameName();
         assertFalse(expResult == result);
     }
+    
+    /**
+     * Test of getGameName method, of class Game.
+     * Boundary test case
+     * to check all the boundary inputs for getGameName()
+     */
     @Test
     public void BoundarytestGetGameName() {
     System.out.println("Boundary case getGameName");

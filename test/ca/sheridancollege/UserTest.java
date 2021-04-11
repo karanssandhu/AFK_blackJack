@@ -41,6 +41,8 @@ public class UserTest {
 
     /**
      * Test of getCash method, of class User.
+     * Good Test Case
+     * to test valid functioning of getCash() method
      */
     @Test
     public void GoodtestGetCash() {
@@ -51,7 +53,11 @@ public class UserTest {
         assertEquals(money,user1.getCash());
 
     }
-
+/**
+     * Test of getCash method, of class User.
+     * Bad Test Case
+     * to test invalid functioning of getCash() method
+     */
     @Test
     public void BadtestGetCash() {
         System.out.println("Bad case getCash()");
@@ -61,7 +67,11 @@ public class UserTest {
         assertNotEquals(20,user1.getCash());
 
     }
-
+/**
+     * Test of getCash method, of class User.
+     * Boundary Test Case
+     * to test boundary functioning of getCash() method
+     */
     @Test
     public void BoundarytestGetCash() {
         System.out.println("Boundary case getCash()");
@@ -74,6 +84,8 @@ public class UserTest {
 
     /**
      * Test of getBet method, of class User.
+     * Good Test Case
+     * to test valid functioning of getBet() method
      */
     @Test
     public void GoodtestGetBet() {
@@ -84,7 +96,11 @@ public class UserTest {
         assertEquals(money,user1.getBet());
 
     }
-
+/**
+     * Test of getBet method, of class User.
+     * Bad Test Case
+     * to test invalid functioning of getBet() method
+     */
     @Test
     public void BadtestGetBet() {
         System.out.println("Bad case getBet()");
@@ -94,7 +110,11 @@ public class UserTest {
         assertNotEquals(20,user1.getBet());
 
     }
-
+/**
+     * Test of getBet method, of class User.
+     * Boundary Test Case
+     * to test boundary functioning of getBet() method
+     */
     @Test
     public void BoundarytestGetBet() {
         System.out.println("Boundary case getBet()");
@@ -107,6 +127,8 @@ public class UserTest {
 
     /**
      * Test of getName method, of class User.
+     * Good Test Case
+     * to test valid functioning of getName() method
      */
     @Test
     public void GoodtestGetName() {
@@ -118,7 +140,11 @@ public class UserTest {
         assertEquals(name,user1.getName());
 
     }
-
+/**
+     * Test of getName method, of class User.
+     * Bad Test Case
+     * to test invalid functioning of getName() method
+     */
     @Test
     public void BadtestGetName() {
         System.out.println("Bad case getName()");
@@ -129,7 +155,11 @@ public class UserTest {
         assertNotEquals("John",user1.getName());
 
     }
-
+/**
+     * Test of getName method, of class User.
+     * Boundary Test Case
+     * to test boundary functioning of getName() method
+     */
     @Test
     public void BoundarytestGetName() {
         System.out.println("Boundary case getName()");
@@ -143,6 +173,8 @@ public class UserTest {
 
     /**
      * Test of setCash method, of class User.
+     * Bad Test Case
+     * to test invalid functioning of setCash() method
      */
     @Test
     public void BadtestSetCash() {
@@ -152,7 +184,11 @@ public class UserTest {
         user1.setCash(money);
         assertNotEquals(20,user1.getCash());
     }
-
+/**
+     * Test of setCash method, of class User.
+     * Good Test Case
+     * to test valid functioning of setCash() method
+     */
     @Test
     public void GoodtestSetCash() {
         System.out.println("Good case setCash()");
@@ -161,7 +197,11 @@ public class UserTest {
         user1.setCash(money);
         assertEquals(money,user1.getCash());
     }
-
+/**
+     * Test of setCash method, of class User.
+     * Boundary Test Case
+     * to test boundary functioning of setCash() method
+     */
     @Test
     public void BoundarytestSetCash() {
         System.out.println("Boundary case setCash()");
@@ -173,6 +213,8 @@ public class UserTest {
 
     /**
      * Test of setBet method, of class User.
+     * Good Test Case
+     * to test valid functioning of setBet() method
      */
     @Test
     public void GoodtestSetBet() {
@@ -182,7 +224,11 @@ public class UserTest {
         user1.setBet(money);
         assertEquals(money, user1.getBet());
     }
-
+    /**
+     * Test of setBet method, of class User.
+     * Bad Test Case
+     * to test invalid functioning of setBet() method
+     */
     @Test
     public void BadtestSetBet() {
         System.out.println("Bad case setBet()");
@@ -191,7 +237,11 @@ public class UserTest {
         user1.setBet(money);
         assertNotEquals(20,user1.getBet());
     }
-
+    /**
+     * Test of setBet method, of class User.
+     * Boundary Test Case
+     * to test boundary functioning of setBet() method
+     */
     @Test
     public void BoundarytestSetBet() {
         System.out.println("Boundar case setBet()");
@@ -203,6 +253,8 @@ public class UserTest {
 
     /**
      * Test of setName method, of class User.
+     * Good Test Case
+     * to test valid functioning of setName() method
      */
     @Test
     public void GoodtestSetName() {
@@ -213,7 +265,11 @@ public class UserTest {
         assertEquals(name,user1.getName());
 
     }
-
+/**
+     * Test of setName method, of class User.
+     * Bad Test Case
+     * to test invalid functioning of setName() method
+     */
     @Test
     public void BadtestSetName() {
         System.out.println("Bad case setName()");
@@ -223,7 +279,11 @@ public class UserTest {
         assertNotEquals("Ben",user1.getName());
 
     }
-
+/**
+     * Test of setName method, of class User.
+     * Boundary Test Case
+     * to test boundary functioning of setName() method
+     */
     @Test
     public void BoundarytestSetName() {
         System.out.println("Boundary case setName()");
@@ -236,6 +296,8 @@ public class UserTest {
 
     /**
      * Test of doubleDown method, of class User.
+     * Good Test Case
+     * to test valid functioning of DoubleDown() method
      */
     @Test
     public void GoodtestDoubleDown() {
@@ -249,7 +311,11 @@ public class UserTest {
         assertEquals(60, user1.getCash());
 
     }
-
+/**
+     * Test of doubleDown method, of class User.
+     * Bad Test Case
+     * to test invalid functioning of DoubleDown() method
+     */
     @Test
     public void BadtestDoubleDown() {
         System.out.println("Bad case doubleDown()");
@@ -260,7 +326,11 @@ public class UserTest {
         
         assertEquals(-20, user1.getCash());
     }
-
+/**
+     * Test of doubleDown method, of class User.
+     * Boundary Test Case
+     * to test boundary functioning of DoubleDown() method
+     */
     @Test
     public void BoundarytestDoubleDown() {
         System.out.println("Boundary case doubleDown");
@@ -274,6 +344,8 @@ public class UserTest {
 
     /**
      * Test of win method, of class User.
+     * Good Test Case
+     * to test valid functioning of win() method
      */
     @Test
     public void GoodtestWin() {
@@ -286,7 +358,11 @@ public class UserTest {
         assertEquals(60, user1.getCash());
 
     }
-
+     /**
+     * Test of win method, of class User.
+     * Good Test Case
+     * to test valid functioning of win() method
+     */
     @Test
     public void BadtestWin() {
         System.out.println("Bad case win()");
@@ -298,7 +374,11 @@ public class UserTest {
         assertNotEquals(90, user1.getCash());
 
     }
-
+ /**
+     * Test of win method, of class User.
+     * Boundary Test Case
+     * to test boundary functioning of win() method
+     */
     @Test
     public void BoundarytestWin() {
          System.out.println("BOUNDARY Test case win()");
@@ -313,6 +393,8 @@ public class UserTest {
 
     /**
      * Test of push method, of class User.
+     * Good Test Case
+     * to test valid functioning of push() method
      */
     @Test
     public void GoodtestPush() {
@@ -324,7 +406,11 @@ public class UserTest {
 
         assertEquals(30, user1.getCash());
     }
-
+/**
+     * Test of push method, of class User.
+     * Bad Test Case
+     * to test invalid functioning of push() method
+     */
     @Test
     public void BadtestPush() {
         System.out.println("Bad case push()");
@@ -335,7 +421,11 @@ public class UserTest {
 
         assertNotEquals(40, user1.getCash());
     }
-
+/**
+     * Test of push method, of class User.
+     * Boundary Test Case
+     * to test boundary functioning of push() method
+     */
     @Test
     public void BoundarytestPush() {
         System.out.println("Boundary case push()");
@@ -349,6 +439,8 @@ public class UserTest {
 
     /**
      * Test of blackJack method, of class User.
+     * Good Test Case
+     * to test valid functioning of blackJack() method
      */
     @Test
     public void GoodtestBlackJack() {
@@ -359,7 +451,11 @@ public class UserTest {
         user1.blackJack();
         assertEquals(50, user1.getCash());
     }
-
+/**
+     * Test of blackJack method, of class User.
+     * Bad Test Case
+     * to test invalid functioning of blackJack() method
+     */
     @Test
     public void BadtestBlackJack() {
         System.out.println("Bad case blackJack()");
@@ -369,7 +465,11 @@ public class UserTest {
         user1.blackJack();
         assertNotEquals(60, user1.getCash());
     }
-
+/**
+     * Test of blackJack method, of class User.
+     * Boundary Test Case
+     * to test boundary functioning of blackJack() method
+     */
     @Test
     public void BoundarytestBlackJack() {
         System.out.println("Boundary case blackJack");
@@ -379,13 +479,15 @@ public class UserTest {
         user1.blackJack();
         assertEquals(80, user1.getCash());
     }
-    @Test
+   
 
 
     /**
      * Test of hasFiveCardTrick method, of class User.
+     * Good Test Case
+     * to test valid functioning of hasFiveCardTrick() method
      */
-   
+    @Test
     public void GoodtestHasFiveCardTrick() {
         
         System.out.println("Good test for hasFiveCardTrick()");
@@ -406,17 +508,22 @@ public class UserTest {
         user1.getHand(1).Hit(deck);
         assertTrue(user1.hasFiveCardTrick(1));
     }
-    
+    /**
+     * Test of hasFiveCardTrick method, of class User.
+     * Bad Test Case
+     * to test invalid functioning of hasFiveCardTrick() method
+     */
+    @Test
     public void BadtestHasFiveCardTrick() {
         
         System.out.println("Bad test for hasFiveCardTrick()");
         User user1 = new User();
         GroupOfCards deck = new GroupOfCards(52);
         ArrayList<playingCard> playingCards = new ArrayList<>();
-        playingCards.add(new playingCard(playingCard.Suit.HEARTS, playingCard.Value.ACE));
+        playingCards.add(new playingCard(playingCard.Suit.HEARTS, playingCard.Value.QUEEN));
         playingCards.add(new playingCard(playingCard.Suit.HEARTS, playingCard.Value.TWO));
-        playingCards.add(new playingCard(playingCard.Suit.HEARTS, playingCard.Value.THREE));
-        playingCards.add(new playingCard(playingCard.Suit.DIAMONDS, playingCard.Value.TWO));
+        playingCards.add(new playingCard(playingCard.Suit.HEARTS, playingCard.Value.KING));
+        playingCards.add(new playingCard(playingCard.Suit.DIAMONDS, playingCard.Value.QUEEN));
         playingCards.add(new playingCard(playingCard.Suit.CLUBS, playingCard.Value.TWO));
         playingCards.add(new playingCard(playingCard.Suit.SPADES, playingCard.Value.QUEEN));
         deck.getCards().clear();
@@ -427,7 +534,12 @@ public class UserTest {
         user1.getHand(1).Hit(deck);
         assertFalse(user1.hasFiveCardTrick(1));
     }
-    
+    /**
+     * Test of hasFiveCardTrick method, of class User.
+     * Boundary Test Case
+     * to test boundary functioning of hasFiveCardTrick() method
+     */
+    @Test
     public void BoundarytestHasFiveCardTrick() {
         
         System.out.println("Boundary test for hasFiveCardTrick()");

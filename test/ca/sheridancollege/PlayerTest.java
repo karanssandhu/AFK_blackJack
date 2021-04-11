@@ -39,7 +39,12 @@ public class PlayerTest {
     @After
     public void tearDown() {
     }
-
+    
+    /**
+     * Test of HasBlackJack method, of class PlayerTest
+     * Good test case
+     * to test the valid functioning of the HasBlackJack method
+     */
     @Test
     public void GoodtestHasBlackJack() {
         System.out.println("Good test for hasBlackJack");
@@ -55,7 +60,12 @@ public class PlayerTest {
         assertTrue(result);
 
     }
-
+    
+    /**
+     * Test of HasBlackJack method, of class PlayerTest
+     * Bad test case
+     * to test the invalid functioning of the HasBlackJack method
+     */
     @Test
     public void BadtestHasBlackJack() {
         System.out.println("Bad test for hasBlackJack");
@@ -71,6 +81,11 @@ public class PlayerTest {
 
     }
     
+    /**
+     * Test of HasBlackJack method, of class PlayerTest
+     * Boundary test case
+     * to test the boundary valid functioning of the HasBlackJack method
+     */
     @Test
     public void BoundarytestHasBlackJack() {
         System.out.println("Boundary test for hasBlackJack");
@@ -83,13 +98,14 @@ public class PlayerTest {
         deck.setCards(playingCards);
         user1.getNewHand(deck);
         boolean result = user1.hasBlackJack(1);
-        System.out.println(result);
         assertTrue(result);
 
     }
 
     /**
      * Test of hasBusted method, of class Player.
+     * Good test case
+     * to test the valid functioning of the hasBusted method
      */
     @Test
     public void GoodtestHasBusted() {
@@ -105,10 +121,15 @@ public class PlayerTest {
         Hand hand=new Hand(deck);
         boolean expResult = true;
         boolean result = user1.hasBusted();
-        System.out.println(result);
         assertEquals(expResult, result);
 
     }
+    
+    /**
+     * Test of hasBusted method, of class Player.
+     * Boundary test case
+     * to test the boundary functioning of the hasBusted method
+     */
      @Test
     public void BoundarytestHasBusted() {
         System.out.println("Boundary case hasBusted()");
@@ -123,11 +144,15 @@ public class PlayerTest {
         Hand hand=new Hand(deck);
         boolean expResult = true;
         boolean result = user1.hasBusted();
-        System.out.println(result);
         assertEquals(expResult, result);
 
     }
 
+    /**
+     * Test of hasBusted method, of class Player.
+     * Bad test case
+     * to test the invalid functioning of the hasBusted method
+     */
     @Test
     public void BadtestHasBusted() {
         System.out.println("Bad case hasBusted()");
@@ -139,13 +164,14 @@ public class PlayerTest {
         Hand hand=new Hand(deck);
         boolean expResult = false;
         boolean result = user1.hasBusted();
-        System.out.println(result);
         assertEquals(expResult, result);
 
     }
      
     /**
      * Test of getHand method, of class Player.
+     * Good test case
+     * to test the valid functioning of the getHand method
      */
     @Test
     public void GoodtestGetHand() {
@@ -167,6 +193,11 @@ public class PlayerTest {
         assertEquals(card1.toString(),user1.getHand(1).getCard(0).toString());
     }
     
+    /**
+     * Test of getHand method, of class Player.
+     * Bad test case
+     * to test the invalid functioning of the getHand method
+     */
     @Test
     public void BadtestGetHand() {
        System.out.println("Bad test case hasBusted()");
@@ -187,6 +218,11 @@ public class PlayerTest {
         assertEquals(card1.toString(),user1.getHand(1).getCard(0).toString());
     }
     
+    /**
+     * Test of getHand method, of class Player.
+     * Boundary test case
+     * to test the boundary valid case functioning of the getHand method
+     */
     @Test
     public void BoundarytestGetHand() {
         System.out.println("Boundary test case hasBusted()");
@@ -209,6 +245,8 @@ public class PlayerTest {
 
     /**
      * Test of getNewHand method, of class Player.
+     * Good test case
+     * to test the valid case functioning of the getNewHand method
      */
    @Test
     public void GoodtestGetNewHand() {
@@ -222,6 +260,11 @@ public class PlayerTest {
         assertEquals(myHand.getHandSize(),2);
     }
     
+    /**
+     * Test of getNewHand method, of class Player.
+     * Bad test case
+     * to test the invalid case functioning of the getNewHand method
+     */
     @Test
     public void BadtestGetNewHand() {
         System.out.println("Bad test case for getNewHand()");
@@ -231,9 +274,14 @@ public class PlayerTest {
         Hand[] aHand = new Hand[]{};
         aHand = user.hand.toArray(aHand);
         Hand myHand = aHand[0];
-        assertEquals(myHand.getHandSize(),1);
+        assertNotEquals(1,myHand.getHandSize());
     }
     
+    /**
+     * Test of getNewHand method, of class Player.
+     * Boundary test case
+     * to test the boundary valid case functioning of the getNewHand method
+     */
     @Test
     public void BoundarytestGetNewHand() {
         System.out.println("Boundary test case for getNewHand()");

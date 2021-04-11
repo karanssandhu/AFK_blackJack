@@ -43,9 +43,11 @@ public class Dealer extends Player {
             }
         }
         if(aHand.length <= 0) {
-            return "Please draw initialise hand!";
+            return "Please initialise hand!";
         }
-        result = "The dealer stands.";
+        else{
+            result = "The dealer stands.";
+        }
         return result;
     }
 }

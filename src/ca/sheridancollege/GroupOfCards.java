@@ -61,6 +61,9 @@ public class GroupOfCards {
      * @return the size of the group of cards
      */
     public int getSize() {
+        if(cards.size()<=0){
+            return 0;
+        }
         return size;
     }
 
@@ -72,6 +75,9 @@ public class GroupOfCards {
     }
 
     public playingCard drawCard() {
+        if(cards.size()<=0){
+            return null;
+        }
         playingCard card = cards.remove(0);
         size--;
         return card;

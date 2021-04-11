@@ -39,6 +39,8 @@ public class playingCardTest {
 
     /**
      * Test of getSuit method, of class playingCard.
+     * Good test case 
+     * to test the valid output for getSuit methods
      */
     @Test
     public void GoodtestGetSuit() {
@@ -47,24 +49,36 @@ public class playingCardTest {
         assertEquals(0, p.getSuit());
     }
 
+     /**
+     * Test of getSuit method, of class playingCard.
+     * Bad test case 
+     * to test the invalid output for getSuit methods
+     */
     @Test
     public void BadtestGetSuit() {
         System.out.println("Bad case testGetSuit()");
-        playingCard p = new playingCard(playingCard.Suit.CLUBS, playingCard.Value.TWO);
-        assertNotEquals(0, p.getSuit());
+        playingCard p = new playingCard(null, playingCard.Value.TWO);
+        assertEquals(0, p.getSuit());
 
     }
 
+     /**
+     * Test of getSuit method, of class playingCard.
+     * Boundary test case 
+     * to test the Boundary output for getSuit methods
+     */
     @Test
     public void BoundarytestGetSuit() {
         System.out.println("Boundary case testGetSuit()");
-        playingCard p = new playingCard(null,playingCard.Value.TWO);
-        assertEquals(0, p.getSuit());
+       playingCard p = new playingCard(playingCard.Suit.DIAMONDS, playingCard.Value.TWO);
+        assertEquals(1, p.getSuit());
 
     }
 
     /**
      * Test of getRank method, of class playingCard.
+     * Good test case 
+     * to test the valid output for getRank methods
      */
     @Test
     public void GoodtestGetRank() {
@@ -73,7 +87,12 @@ public class playingCardTest {
         assertEquals(0, p.getRank());
 
     }
-
+    
+    /**
+     * Test of getRank method, of class playingCard.
+     * Bad test case 
+     * to test the invalid output for getRank methods
+     */
     @Test
     public void BadtestGetRank() {
         System.out.println("Bad case testGetRank()");
@@ -81,7 +100,12 @@ public class playingCardTest {
         assertNotEquals(10, p.getRank());
 
     }
-
+    
+    /**
+     * Test of getRank method, of class playingCard.
+     * Boundary test case 
+     * to test the boundary output for getRank methods
+     */
     @Test
     public void BoundarytestGetRank() {
         System.out.println("Boundary case testGetRank()");
@@ -92,6 +116,8 @@ public class playingCardTest {
 
     /**
      * Test of getValue method, of class playingCard.
+     * Good test case 
+     * to test the valid output for getValue methods
      */
     @Test
     public void GoodtestGetValue() {
@@ -100,7 +126,12 @@ public class playingCardTest {
         assertEquals(11, p.getValue());
 
     }
-
+    
+    /**
+     * Test of getValue method, of class playingCard.
+     * Good test case 
+     * to test the valid output for getValue methods
+     */
     @Test
     public void BadtestGetValue() {
         System.out.println("Bad case testGetValue()");
@@ -108,7 +139,12 @@ public class playingCardTest {
         assertNotEquals(1, p.getValue());
 
     }
-
+    
+    /**
+     * Test of getValue method, of class playingCard.
+     * Boundary test case 
+     * to test the boundary valid output for getValue methods
+     */
     @Test
     public void BoundarytestGetValue() {
         System.out.println("Boundary case testGetValue()");
